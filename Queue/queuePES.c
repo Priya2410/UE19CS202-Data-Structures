@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 #include<stdlib.h>
 #define SIZE 5
 void insert_rear(int ele,int *r,int *q)
