@@ -64,6 +64,28 @@ void preorder(struct Node *root)
     }
     
 }
+void inorder(struct Node *root)
+{
+    if(root==NULL)
+        return;
+    else
+    {
+        inorder(root->llink);
+        printf("%d ",root->data);
+        inorder(root->rlink);
+    }
+}
+void postorder(struct Node *root)
+{
+    if(root==NULL)
+        return;
+    else
+    {
+        postorder(root->llink);
+        postorder(root->rlink);
+        printf("%d ",root->data);
+    }
+}
 int main()
 {
     int choice;
@@ -74,7 +96,9 @@ int main()
         printf("\nEnter 1 for insertion\n");
         printf("Enter 2 for search\n");
         printf("Enter 3 to display in preorder\n");
-        printf("Enter 4 to exit\n");
+        printf("Enter 4 to display in inorder\n");
+        printf("Enter 5 to display in postorder\n");
+        printf("Enter 6 to exit\n");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -102,6 +126,14 @@ int main()
             break;
 
             case 4:
+            inorder(root);
+            break;
+
+            case 5:
+            postorder(root);
+            break;
+
+            case 6:
             exit(0);
             break;
             default:printf("Wrong Choice\n");
