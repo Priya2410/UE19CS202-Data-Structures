@@ -37,7 +37,6 @@ struct Node *insert(int ele,struct Node *root)
     }
 }
 
-
 int main()
 {
     int choice;

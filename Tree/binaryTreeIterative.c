@@ -66,7 +66,7 @@ void preorder(struct Node *root)
         while(cur!=NULL)
         {
             printf("%d ",cur->data);
-            s[++top]=cur->data;//adding the cur to the stack
+            s[++top]=cur;//adding the cur to the stack
             cur=cur->llink;
         }
         if(top!=-1)
