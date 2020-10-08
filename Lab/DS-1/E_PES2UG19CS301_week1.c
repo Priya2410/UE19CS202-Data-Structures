@@ -6,11 +6,11 @@
 //Otherwise, returns -1.
 int seqsearch(int *arr, int n, int key) 
 	{
-		int i;
-		for(i=0;i<n;i++)
+		int k;
+		for(k=0;k<n;k++)
 		{
-			if(arr[i]==key)
-				return i+1;
+			if(arr[k]==key)
+				return k+1;
 		}
 		return -1;
 	}
