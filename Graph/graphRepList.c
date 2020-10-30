@@ -55,6 +55,43 @@ void read_list(struct Node a[],int n)
         }
     }
 }
+struct Node *delete_front(struct Node *first)
+{
+    if(first==NULL)
+    {
+        //No node present
+        return NULL;
+    }
+    struct Node *temp=first;
+    first=first->link;
+    free(temp);
+    return first;
+}
+void bfs(struct Node* a[],int n,int u)
+//a is the array of structures
+{
+    struct Node *q=NULL,*list;//Initally our queue is NULL
+    int v;
+    int visited[n]={0};//Intially all are 0 
+    q=insert_end(u,q);
+    // we will insert a node with value of u and the address as NULL;
+    while(q!=NULL)
+    {
+        u=q->data;
+        q=delete_front(q);
+        list=a[u];
+        while(list!=NULL)
+        {
+            v=list->data;
+            if(visited[v]==0)//Not visited
+            {
+                visited[v]=1;
+                q=insert_end(v,q);
+            }
+            list=list->link;
+        }
+    }
+}
 int main()
 {
     int n;//The number of vertices
@@ -63,6 +100,5 @@ int main()
     struct Node a[n];//declare array of structures
     printf("Enter the list\n");
     read_list(a,n);
-    
     return 0;
 }
