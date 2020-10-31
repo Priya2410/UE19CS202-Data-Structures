@@ -56,7 +56,7 @@ void display(int *front,int *rear,int *q)
     }
     else
     {
-        for(int i=*front;i!=*rear;i++)
+        for(int i=*front;i<*rear;i++)
         {
             printf("%d ",q[i]);
         }

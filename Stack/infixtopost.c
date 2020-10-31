@@ -70,8 +70,6 @@ int i=0,j=0;
 char *postfix;
 int len=strlen(infix);
 postfix=(char *)malloc((len+2)*sizeof(char));
-// push('(');
-// strcat(infix,")");
 while(infix[i]!='\0')
 {
 if(isOperand(infix[i]))

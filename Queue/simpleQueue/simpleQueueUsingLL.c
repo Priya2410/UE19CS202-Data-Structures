@@ -44,7 +44,6 @@ void display(struct Node **front,struct Node **rear)
     else
     {
         while(p!=(*rear)->next) 
-        // while(p!=NULL)
         {
             printf("%d ",p->data);
             p=p->next;
