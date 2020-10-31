@@ -39,6 +39,14 @@ void display(struct Node *top)
         }
     }
 }
+void peek(struct Node *top)
+{
+    if(top==NULL)
+    {printf("STack is empty\n");
+    return ;}
+    else
+        printf("%d",(top)->data);
+}
 int main()
 {
     int choice;
@@ -49,7 +57,8 @@ int main()
         printf("\nEnter 1 for Push\n");
         printf("Enter 2 for Pop\n");
         printf("Enter 3 for Display\n");
-        printf("Enter 4 for Exit\n");
+        printf("Enter 4 for Peek\n");
+        printf("Enter 5 for Exit\n");
         printf("Enter your choice\n");
         scanf("%d",&choice);
         switch(choice)
@@ -66,6 +75,9 @@ int main()
             display(top);
             break;
             case 4:
+            peek(top);
+            break;
+            case 5:
             exit(0);
             break;
             default:

@@ -30,11 +30,6 @@ int pop()
 		printf("%s\n","Stack is empty" );
 		return -1;
 	}
-	else if (s.top==0)
-	{
-		s.top=-1;
-		return -1;
-	}
 	else
 	{
 		num=s.a[s.top];
@@ -51,7 +46,7 @@ void display()
 	}
 	else
 	{
-		for(i=s.top;i>0;i--)
+		for(i=s.top;i>=0;i--)
 		{
 			printf("%d ",s.a[i]);
 		}

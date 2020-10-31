@@ -59,6 +59,7 @@ NODE delete_front(NODE head)
     else
     {
         head->link=first->link;
+        free(first);
         return head;
 
     }
