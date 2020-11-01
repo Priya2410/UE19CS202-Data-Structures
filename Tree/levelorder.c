@@ -104,3 +104,20 @@ void levelOrder(struct node * root) {
         }
     }
 
+int main() {
+  
+    struct node* root = NULL;
+    
+    int t;
+    int data;
+
+    scanf("%d", &t);
+
+    while(t-- > 0) {
+        scanf("%d", &data);
+        root = insert(root, data);
+    }
+  
+	levelOrder(root);
+    return 0;
+}
