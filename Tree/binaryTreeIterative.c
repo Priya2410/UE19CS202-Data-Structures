@@ -82,6 +82,7 @@ void preorder(struct Node *root)
     }
     
 }
+//Uses explicit stack
 void inorder(struct Node *root)
 {   
     struct Node *cur=root;

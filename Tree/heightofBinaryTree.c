@@ -33,6 +33,22 @@ struct node* newNode(int data)
     node->right = NULL; 
     return(node); 
 } 
+int numberofnodes(struct node *root)
+{
+    if(root==NULL)
+    return 0;
+    else
+    return 1+numberofnodes(root->left)+numberofnodes(root->right);
+}
+int numberofleafnodes(struct node *root)
+{
+    if(root==NULL)
+    return 0;
+    if(root->left==NULL && root->right==NULL)
+    return 1;
+    else
+    return numberofleafnodes(root->left)+numberofleafnodes(root->right);
+}
     
 int main() 
 { 
@@ -43,8 +59,9 @@ int main()
     root->left->left = newNode(4); 
     root->left->right = newNode(5);  
     
-    printf("Height of tree is %d", maxDepth(root)); 
-    
+    printf("Height of tree is %d\n", maxDepth(root)); 
+    printf("Number of nodes in a tree is %d\n", numberofnodes(root)); 
+    printf("Number of leaf nodes in a tree is %d\n", numberofleafnodes(root));
     getchar(); 
     return 0; 
 } 
