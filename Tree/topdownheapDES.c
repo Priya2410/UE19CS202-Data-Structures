@@ -26,6 +26,6 @@ void heapify(int *h,int n)
 int main()
 {
     int h[]={25,57,48,37,12,92,86,33};
-    int n=8;
+    int n=7;
     heapify(h,n);
 }
