@@ -1,5 +1,6 @@
 //Adjacency Matrix Representation of Graph
 #include<stdio.h>
+int s[10]={0};
 void read_mat(int n,int g[n][n])
 {
     for(int i=0;i<n;i++)
@@ -39,7 +40,7 @@ void bfs(int a[5][5],int n,int u)
             {
                 if(s[v]==0)
                 {
-                    printf("%d\t",v)
+                    printf("%d\t",v);
                     s[v]=1;
                     q[++r]=v;
                 }
@@ -48,6 +49,23 @@ void bfs(int a[5][5],int n,int u)
     }
     printf("\n");
 }
+// void dfs(int a[5][5],int u,int n)
+// {
+//     //u is the first arbitary node
+//     //n is the number of vertices
+//     int v;
+//     printf("Node visted is:%d\t",u);
+//     for(int v=0;v<n;v++)
+//     {
+//         if((s[u]==0) && (a[u][v]==1))
+//         {
+//             // s[u]=1;
+//             dfs(a,v,n);
+//         }
+//     }
+//     printf("\n");
+    
+// }
 int main()
 {
     int n;//This is the number of vertices

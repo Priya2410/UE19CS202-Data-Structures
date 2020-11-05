@@ -92,6 +92,19 @@ void bfs(struct Node* a[],int n,int u)
         }
     }
 }
+//Just logic
+// void dfs(int u)
+// {
+//     int v;
+//     struct Node *temp=(struct Node*)malloc(sizeof(struct Node));
+//     visited[u]=1;
+//     if temp==NULL then the node has no adjacent noes
+//     for(temp=a[u];temp!=NULL;temp=temp->link)
+//     {
+//         if(visited[temp->data]==0)
+//         dfs(temp->data);
+//     }
+// }
 int main()
 {
     int n;//The number of vertices
