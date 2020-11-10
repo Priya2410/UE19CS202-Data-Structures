@@ -31,11 +31,12 @@ void traverse(int u, int visited[5],int g[5][5],int n)
 int isconnected(int g[5][5],int n)
 {
 	int visited[n];
+    for(int u=0;u<n;u++)
 		for(int j=0;j<n;j++)
 		{
 			visited[j]=0;
 		}
-		traverse(0,visited,g,n); //just traverse the first aribitary node
+		traverse(u,visited,g,n); //just traverse the first aribitary node
 		for(int i=0;i<n;i++)
 		{
 			if(!visited[i])

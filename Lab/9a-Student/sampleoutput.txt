@@ -1,0 +1,9 @@
+A*B+C-D
++*AB-CD
+AB*CD-+
+A+B
++AB
+AB+
+A
+A
+A
