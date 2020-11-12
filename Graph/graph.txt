@@ -1,0 +1,82 @@
+//to calculate indegree of a node in matrix
+
+let v be the node
+
+for(int i=0;i<n;i++)
+{
+	if(a[i][v]==1)
+	count ++;
+}
+
+//count is the indegree
+
+//to calculate outdegree of a node in a matrix 
+
+let v be the node
+
+for(int i=0;i<n;i++)
+{
+	if(a[v][i] == 1)
+	count ++;
+
+}
+
+//Insertion in a matrix
+
+first ask the user n,m
+
+initialize the array with 0
+
+then while(1)
+{
+	ask for soure and destination i,j
+	a[i][j]=1;
+}
+
+
+//Adjacency List
+
+how to insert :
+
+1)Ask for number of vertices - n
+
+2) Ask how many nodes adjacent -m 
+
+3)Ask the element adjacent and insert at rear
+
+for(int i=0;i<n;i++)
+{
+	pf("how many nodes are adjacent ?")
+	scanf(m);
+
+	for(int j=0;j<m;j++)
+	{
+	ele=node ajacent;
+	a[i]=insertatend(ele,a[i]);
+	}
+}
+
+//Node
+Indegree 
+for(int i=0;i<n;i++)
+{
+	struct Node *temp=a[i];
+	while(temp!=NULL)
+	{
+	if(temp->data==v)
+	{
+		count ++;
+
+	}
+	temp=temp->next;
+	}
+}
+
+//Outdegree
+
+temp=a[v];
+while(temp!=NULL)
+{
+	count++;
+	temp=temp->next;
+}
