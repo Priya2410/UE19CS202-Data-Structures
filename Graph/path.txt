@@ -1,0 +1,39 @@
+//Path using DFS
+
+given source and destination
+
+check if its out of bounds
+
+if(source<0 || source>n)
+return 0;
+if(dest<0 || dest>n)
+return 0;
+
+// visited array and path array is required 
+// we also have to backtrack 
+
+void printpath(struct Node *adjlist , int source , int dest ,int *visited,int *path, int count)
+{
+    visited[source]=1;
+    path[count]=source;
+    count++;
+
+    if(source == destination)
+    {
+        for(int i=0;i<n;i++)
+        printf(path[i]);
+    }
+    else
+    {
+    for(struct Node *temp=ajdlist[source];temp!=NULL;temp=temp->link)
+    {
+        if(visited[temp->data]==0)
+        {
+            printpath(adjlist,temp->data,dest,visited,path,count);
+        }
+    }
+    }
+    //For backtracking
+    count --;
+    visited[source]=0;
+}

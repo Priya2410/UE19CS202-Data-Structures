@@ -80,3 +80,6 @@ while(temp!=NULL)
 	count++;
 	temp=temp->next;
 }
+
+BFS is level order traversal
+DFS is pre order traversal
