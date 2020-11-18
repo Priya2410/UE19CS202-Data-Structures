@@ -12,6 +12,7 @@ return 0;
 // visited array and path array is required 
 // we also have to backtrack 
 
+********DFS PATH ********
 void printpath(struct Node *adjlist , int source , int dest ,int *visited,int *path, int count)
 {
     visited[source]=1;
@@ -37,3 +38,32 @@ void printpath(struct Node *adjlist , int source , int dest ,int *visited,int *p
     count --;
     visited[source]=0;
 }
+
+******BFS PATH***** 
+//Matrix
+//Here a is the matrix , n is the number of vertices
+
+void printpath(int a[n][n],int n,int source,int dest)
+{
+int visited[n]={0};
+int q[n];
+int f=0;
+int r=-1;
+q[++r]=source;
+visited[source]=1;
+
+while(f<=r)
+{
+    if(source==dest)
+    return 1;
+    source=q[++f];
+    for(int v=0;v<n;v++)
+    {
+    if(a[source][v]==1 && visited[v]==0)
+    {
+        visited[v]=1;
+        q[++r]=v;
+    }
+
+}
+
