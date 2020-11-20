@@ -57,6 +57,40 @@ int search(TREE *root,char *str)
     return 1;
 }
 
+//Multiple pattern search
+//Here text is a article the result of the number of words found are stored in a array where we have 10 words 20 characters long
+int mp_search(TRIE *root,char *text,char res[10][20])
+{
+    TRIE *cur;
+    int i=0;
+    char temp[20];
+    //While there are characters in the text
+    while(*text)
+    {
+        cur=root; //for every word //cur is set to the trie initially all the characters in first position are stored 
+        g=text; 
+        int k=0;
+        while(*g)
+        {
+            if(cur->child[*g-'a']==NULL) //No pattern there
+            {
+                break;
+            }
+            cur=cur->child[*g-'a'];
+            temp[k++]=*g; //Character is captured becuase we found one character
+            //We have to check everytime that the cur is leaf so that we can store all the possible patterns 
+            if(cur->isleaf==1)
+            {
+                temp[k]='\0';
+                strcpy(res[i],temp);
+                i++;
+            }
+            g++;
+        }
+        text++; //Equivalent to moving to next position
+    }
+    return --i;
+}
 int main()
 {
     TRIE *root=getnode();
