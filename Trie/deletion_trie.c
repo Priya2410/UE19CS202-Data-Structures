@@ -6,10 +6,13 @@
 #define alphabet_size 26
 
 int count;
+
 struct trie{
 	struct trie *children[alphabet_size];
 	bool endofword;
 };
+//To get the node 
+//For initialization
 struct trie* getnode()
 {
 	struct trie *temp=NULL;
@@ -24,6 +27,7 @@ struct trie* getnode()
 	}
 	return(temp);
 }
+
 void insert(struct trie *head,char *str)
 {
 	struct trie *cur=head;
@@ -38,6 +42,7 @@ void insert(struct trie *head,char *str)
 	}
 	cur->endofword=true;
 }
+
 void display(struct trie* root,char str[],int level)
 {
 	if(root->endofword!=false&&level==count)
@@ -54,6 +59,7 @@ void display(struct trie* root,char str[],int level)
 		}
 	}
 }
+
 bool search(struct trie*root,char *key)
 {
 	if(root==NULL)
@@ -68,21 +74,26 @@ bool search(struct trie*root,char *key)
 	}
 	return(cur->endofword);
 }
+
 bool isempty(struct trie *root)
 {
 	for(int i=0;i<alphabet_size;i++)
 	{
-		if(root->children[i])
+		if(root->children[i]!=NULL)
 			return(false);
 	}
 	return(true);
 }
 struct trie *delete(struct trie*root,char *key,int depth)
 {
-	if(!root)
+	//Initial value of depth=0;
+	//for key is the first alphabet
+	if(root==NULL)
 	{
+		//Word doesnt exist;
 		return(NULL);
 	}
+
 	if(depth==strlen(key))
 	{
 		if(root->endofword)
