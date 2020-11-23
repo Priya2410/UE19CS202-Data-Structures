@@ -1,0 +1,80 @@
+// Linear Probing
+
+struct item{
+	int key;
+	int value;
+}
+
+
+//flag =0 when its empty
+//flag=1 when its non empty
+//flag=2 when val is deleted
+
+struct hashtable
+{
+	int flag;
+	struct item * data;
+}
+
+void init()
+{
+	for(int i=0li<maxsize;i++)
+	{
+		array[i].data=NULL;
+		array[i].flag=0;
+	}
+}
+
+int hashfunction1(int key)
+{
+	return key%maxsize;
+}
+
+int hashfunction2(int key)
+{
+	return prime-(key%prime);
+}
+
+void insert(int key,int value)
+{
+	struct hashtable *newitem=(struct hashtable *)malloc(sizeof(hashtable));
+	newitem->flag=0;
+	newitem->data=NULL;
+	int hashkey1=hashfunction1(key);
+	int hashkey2=hashfunction2(key);
+
+	if(array[hashkey1].flag == 0 || array[hashkey].flag == 2)
+	{
+		array[hashkey].flag=1;
+		array[hashkey].data=newitem;
+		size++;
+	}
+
+	else if(array[hashkey].data->key == key)
+	{
+	 printf("Duplicate");
+	 return;
+	}
+
+	else
+	{
+		int i=1;
+		int j=(hashkey1+i*hashkey2)%size;
+		while(j!=hashkey || array[j].flag!=0 ||array[j].flag == 2)
+		{
+			i++;
+			j=(j+i*hashkey2)%size;
+		}
+		if(j==hashkey)
+		{
+		//FULL;
+		}
+		else
+		{
+			array[hashkey].flag=1;
+			array[hashkey].data=newitem;
+			size++;
+		}
+	}
+}
+

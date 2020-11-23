@@ -1,0 +1,87 @@
+// Linear Probing
+
+struct item{
+	int key;
+	int value;
+}
+
+
+//flag =0 when its empty
+//flag=1 when its non empty
+//flag=2 when val is deleted
+
+struct hashtable
+{
+	int flag;
+	struct item * data;
+}
+
+void init()
+{
+	for(int i=0li<maxsize;i++)
+	{
+		array[i].data=NULL;
+		array[i].flag=0;
+	}
+}
+
+int hashfunction(int key)
+{
+	return key%maxsize;
+}
+
+void insert(int key,int value)
+{
+	struct hashtable *newitem=(struct hashtable *)malloc(sizeof(hashtable));
+	newitem->flag=0;
+	newitem->data=NULL;
+	int hashkey=hashfunction(key);
+
+	if(array[hashkey].flag == 0 || array[hashkey].flag == 2)
+	{
+		array[hashkey].flag=1;
+		array[hashkey].data=newitem;
+		size++;
+	}
+
+	else if(array[hashkey].data->key == key)
+	{
+	 printf("Duplicate");
+	 return;
+	}
+
+	else
+	{
+		int j=(hashkey+1)%size;
+		while(j!=hashkey || array[j].flag!=0 || array[j].flag != 2)
+		{
+			j=(j+1)%maxsize;
+		}
+		if(j==hashkey)
+		{
+		//FULL;
+		}
+		else
+		{
+			array[hashkey].flag=1;
+			array[hashkey].data=newitem;
+			size++;
+		}
+	}
+}
+
+void remove(int key,int value)
+{
+	int hashkey=hashfunction(key);
+	i=hashkey;
+	while(array[i].flag !=0)
+	{
+		if(array[i].flag==1 && array[i].data->key==key)
+		{
+			array[i].flag=2;
+			array[i].data=Null;
+			size--;
+		}
+		i=(i+1)%maxsize;
+	}
+}
