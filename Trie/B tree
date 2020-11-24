@@ -1,0 +1,20 @@
+B tree properties 
+
+1)All leaf nodes are at the same level
+2)Min key=ceil((m-1)/2)
+3)Max key=m-1
+4)Max child=m
+5)Min child=ceil(m/2)
+
+Deletion
+Leaf nodes
+1)If more than min after Deletion then delete normally
+2)If less borrow from right/left sibling
+3)Right sibling root-----smallest right----node
+4)Left sibling root----largest left----node
+5)If not delete node and merge right and left node with the parent
+
+Internal node
+1)Replace with inorder successor/predecessor
+2)If not then merge both and delete node
+3)If not borrow from right or left in the same way as leaf nodes
