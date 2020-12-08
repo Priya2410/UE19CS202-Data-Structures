@@ -8,7 +8,9 @@ Peek - getting the element which is present at the top of the stack.
 
 Linked list - Insert and delete at front.
 Infix to prefix algorithm :
--> Reverse prefix '(' must be replaced by ')' and vice versa.
--> Convert to postfix
--> Reverse the postfix
+<ul>
+<li> Reverse prefix '(' must be replaced by ')' and vice versa.</li>
+<li> Convert to postfix </li>
+<li> Reverse the postfix </li>
+  </ul>
 </strong>
