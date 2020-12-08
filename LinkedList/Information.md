@@ -1,3 +1,4 @@
+<strong>
 Difference between static and dynamic memory allocation
 
 Static : Memory is allocated during compile time
@@ -42,3 +43,5 @@ What is a sparse matrix ?
 2D Array with more zeros than non zero values.
 Used in social media implementaion where a user has only a selected number of friends.
 Can be represented by multilist also.
+
+</strong>
