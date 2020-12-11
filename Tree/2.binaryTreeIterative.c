@@ -52,91 +52,91 @@ struct Node *search(int ele,struct Node *root)
         }
     }
 }
+
+// Algorithm 
+//As long as the stack has elements we continue the process 
+// Before entering the loop we insert the root
+//Push right side
+//Push left side
+// Althought Preorder is root-left-right
+// But since we want left to be above right we push right first
+
 void preorder(struct Node *root)
 {
-    struct Node *cur=root;
-    if(root==NULL)
+    struct Node *s[50];
+    int top=-1;
+    struct Node *p=root;
+    s[++top]=root->data;
+
+    while(top!=-1)
     {
-        printf("The tree is empty\n");
-        return;
+        p=s[top--];
+        printf("%d",p->data);
+        if(p->rlink!=NULL)
+        {
+            s[++top]=p->rlink;
+        }
+        if(p->llink != NULL)
+        {
+            s[++top]=p->llink;
+        }
     }
-    int s[20];int top=-1;
-    for(;;)
-    {
-        while(cur!=NULL)
-        {
-            printf("%d ",cur->data);
-            s[++top]=cur;//adding the cur to the stack
-            cur=cur->llink;
-        }
-        if(top!=-1)
-        {
-            cur->data=s[top--];
-            cur=cur->rlink;
-        }
-        else
-        {
-            return;
-        }
-        
-    }
-    
 }
+
+// Algorithm :
+// P intially points at root node 
+// While p is not null 
+// push p on to the stack 
+// and move left 
+// after it becomes null pop the top of the stack and them move p to right
+// This process continues till the stack is empty and p is not null
 //Uses explicit stack
 void inorder(struct Node *root)
 {   
-    struct Node *cur=root;
-    if(root==NULL)
+    struct Node *p;
+    p=root;
+    struct Node *s[50]; // stack
+    int top=-1;
+    do{
+        while(p!=NULL)
         {
-            printf("The tree is empty\n");
+            s[++top]=p;
+            p=p->llink;
         }
-    int s[20];int top=-1;
-    for(;;)
-    {
-        while(cur!=NULL)
-        {
-            s[++top]=cur->data;//adding the cur to the stack
-            cur=cur->llink;
-        }
-        if(top!=-1)
-        {
-            cur->data=s[top--];//pop the element
-            printf("%d ",cur->data);
-            cur=cur->rlink;
-        }
-        else
-        {
-            return;
-        }
-        
-    }
+        p=s[top--];
+        printf("%d ",p->data);
+        p=p->rlink;
+    }while(top!=-1 || p!=NULL);
+
 }
+
 void postorder(struct Node *root)
 {
-    if(root==NULL)
-        {
-            printf("The tree is empty\n");
-        }
-    int s[20];int top=-1;
-    struct Node *cur=root;
-    for(;;)
+    struct Node *s1[50];
+    struct Node *s2[50];
+    int top1=-1;
+    int top2=-1;
+    struct Node *p;
+    // Push the root node first
+    s1[++top1]=root->data;
+    while(top1!=-1)
     {
-        while(cur!=NULL)
+        p=s1[top1--]; //Pop from stack 1
+        s2[++top2]=p; // Push to stack 2
+        if(p->llink!=NULL)
         {
-            s[++top]=cur->data;//adding the cur to the stack
-            cur=cur->llink;
+            s1[++top1]=p->llink;
         }
-        if(top!=-1)
+        if(p->rlink!=NULL)
         {
-            cur->data=s[top--];//pop the element
-            cur=cur->rlink;
-            printf("%d ",cur->data);
+            s1[++top1]=p->rlink;
         }
-        else
-        {
-            return;
-        }
-        
+    }
+    //To print stack contents of stack 2
+    while(top2!=NULL)
+    {
+        p=s2[top2--];
+        printf("%d",p->data);
     }
 }
 int main()
