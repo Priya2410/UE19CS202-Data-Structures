@@ -60,26 +60,28 @@ void create(TREE* ptr)
 {
     struct Node *temp,*q,*p;
     int choice;
-    ptr->root=getnode();
+    ptr->root=getnode(); //The root of the tree
     do
     {
-        temp=getnode();
-        while(p!=NULL)
+        temp=getnode(); //Creating the temp node
+	q=NULL;
+	p=ptr->root;
+        while(p!=NULL) // While the 
         {
-            q=p;
+	    q=p;
             if(temp->data < p->data)
             p=p->llink;
             else
             {
                 if(temp->rthread)
-                break;
-                p=p->rlink;
+                break; //If its a thread you cant move forward and insert 
+                p=p->rlink; // If its a child you move forward
             }
         }
-        if(p==NULL)
+        if(p==NULL) //We found a position to insert an element that is the traversal is complete there was no right thread
         setleft(q,temp);
         else
-        setright(p,temp);
+        setright(p,temp); // Here we found a right thread so traversal wasnt complete so we insert at the right position
         printf("Do you want to continue1/0\n");
 			scanf("%d",&choice);
     }while(choice);
