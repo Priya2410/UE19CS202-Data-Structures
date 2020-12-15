@@ -1,0 +1,40 @@
+Count the number of nodes
+
+cur=head;
+int count=0;
+while(cur!=NULL)
+{
+	count=count+1;
+	cur=cur->link;
+}
+
+
+Concatenate two lists 
+
+if(head1==Null)
+{
+	return head2;
+}
+else if(head2==Null)
+{
+	return head1
+}
+else
+{
+	while(head1->next!=NULL)
+	{
+		head1=head1->link;
+	}
+	head1->link=head2;
+	return head1
+}
+
+
+Sum of all nodes
+
+int sum=0;
+while(cur!=NULL)
+{
+	sum=sum+cur->data;
+	cur=cur->link;
+}

@@ -1,0 +1,120 @@
+Multiplication of polynomials - same conditions as addition but when the poly1->exp == poly2->exp
+
+poly3->exp=poly1->exp*poly2->exp;
+poly3->coeff=poly1->coeff*poly2->coeff;
+
+-----------------------------------------------------------------------------------------------------
+
+Concatenate two lists :
+
+if(list1==NULL)
+return list2;
+
+if(list2==NULL)
+return list1;
+
+else
+{
+	while(list->next!=NULL)
+	{
+		list1=list1->next;
+	}
+
+	list1->next=list2;
+}
+
+------------------------------------------------------------------------------------------------------
+
+Free all nodes in a list 
+
+
+cur=head
+while(head!=NULL)
+{
+	
+	free(cur);
+	head=head->next;
+	cur=head;
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+Reverse a singly linked list 
+
+while(next!=NULL)
+{
+	next=next->link;
+	cur->link=prev;
+	cur=next;
+	prev=cur;
+}
+
+head=prev
+
+------------------------------------------------------------------------------------------------------
+
+Combine two ordered lists
+
+given two lists p,q
+result in res
+
+while((p->link!=NULL) && (q->link!=NULL))
+{
+	if(p->data>q->data)
+	{
+		insert_tail(res,p->data);
+		p=p->link;
+	}
+	else if(q->data>p->data)
+	{
+
+		insert_tail(res,q->data);
+		q=q->link;
+	}
+	else
+	{
+		insert_tail(res,p);
+		p=p->link;
+		q=q->link
+	}
+}
+
+if(p==NULL)
+{
+	while(q->link!=NULL)
+	{
+		insert_tail(res,q->data);
+		q=q->link;
+	}
+}
+
+if(q==NULL)
+{
+	while(p->link!=NULL)
+	{
+		insert_tail(res,p->data);
+		p=p->link;
+	}
+}
+
+------------------------------------------------------------------------------------------------------
+
+Union of two lists with head pointers t1,t2
+
+while(t1->link!=Null)
+	t1=t1->link;
+
+while(t2->link!=Null)
+{
+	if(!present(t2->data))
+	{
+		insert_tail(t1,t2->data);
+		t2=t2->link
+	}
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+
