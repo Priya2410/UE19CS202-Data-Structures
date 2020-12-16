@@ -1,4 +1,4 @@
-//graph is connected or not using bfs for UNDIRECTED GRAPH
+//graph is connected or not using bfs for UNDIRECTED GRAPH - Weakly Connected
 #include<stdio.h>
 void read_matrix(int g[5][5],int n)
 {
