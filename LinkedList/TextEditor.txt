@@ -1,0 +1,19 @@
+Text Editors enable the user to edit files or create files.
+Features
+1)Storage of data
+2)Insertion
+3)Deletion
+4)Find , replace , cut , copy
+
+Types of editors :
+1) Line editors - can edit a single line at a time 
+2) Stream editors - can edit multiple lines at a time - can type paragraphs
+3) Screen editors - we can see the cursor on the screen and can make operations like cut,copy,paste etc ex:Nano,Vi.
+4) Word processors - help to insert image,link etc
+5) Structure editor focus is on programming
+
+How do text editors work ?
+In text editors each key has a value associated with it
+The program waits for the user to enter a key
+So when a key is pressed that key is detected and then it is displayed on the screen and added to the linked list,the user can delete the data , that particular link 
+in the link list is deleted and so on.
