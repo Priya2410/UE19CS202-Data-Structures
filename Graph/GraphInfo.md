@@ -28,10 +28,10 @@ struct Node<br>
   int weight;<br>
   struct Node *link;<br>
 }<br>
---------------------------------------------------------------------------------------------------------<br>
+<hr>
 BFS - Level Order Traversal<br>
 DFS - Pre Order Traversal<br>
---------------------------------------------------------------------------------------------------------<br>
+<hr>
 Computer Topology :<br>
 Used in networks <br>
 1) Ring Topology : All the nodes have a degree=2<br>
