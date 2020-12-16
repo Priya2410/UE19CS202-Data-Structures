@@ -13,14 +13,14 @@ Directed Acycling Graph: DAG <br>
 Connected Graph : If all nodes can be visited from a node its called connected (in directed and strongly connected in undirected)<br>
 Disconnected Graph : If all the nodes can't be visited.<br>
 Weakly connected : If all nodes can be visited only from a single node<br>
---------------------------------------------------------------------------------------------------------<br>
+<hr>
 Properties:<br>
 A directed graph has max of m(m-1) edges/<br>
 An undirected graph has max of (m*(m-1))/2 edges<br>
---------------------------------------------------------------------------------------------------------<br>
+<hr>
 Disadvantage of adjacency matrix : the number of vertices must be known <br>
 Space Complexity : O(n^2)<br>
---------------------------------------------------------------------------------------------------------<br>
+<hr style="color:red">
 In case of weighted graph :<br>
 struct Node<br>
 {<br>
