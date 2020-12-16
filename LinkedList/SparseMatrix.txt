@@ -1,0 +1,12 @@
+Majority of the elements are 0.
+Like for readind data from a sensor or a user's friend on a social network.
+[[0 0 0 1][2 0 0 0][0 0 4 0][0 0 0 5]]
+Notations :
+1) Triple Notation 
+struct term
+{
+  int row;
+  int col;
+  int value;
+}
+If sparse matrix values > 0 (more than 50% ) then its a sparse matrix.
