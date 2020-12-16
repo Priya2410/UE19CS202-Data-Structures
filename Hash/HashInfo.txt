@@ -1,0 +1,34 @@
+Hashing :
+
+Helps in searching an element in O(constant)
+Better than arrays as it takes less space
+An hash table maps the key to the values 
+
+Hash function types :
+1) Direct Mapping
+2) Dividing the key with nearest prime number
+3) Truncation
+4) Dividing the key with the size of the hash table
+
+Hashing can lead to collisions so we have collision resolution techniques:
+1) Open Addressing - chain hashing
+2) Closed Addressing - linear,quad,rehash,double
+
+Linear Probing can result in primary clustering where elements are clustered in one particular location
+
+Quadratic Probing leads to secondary clustering where elements are clustered at different locations in small groups
+
+Double Hashing
+Hashfunction = nearestprime-key%nearestprime
+To prevent collision
+j=hashkey1+i*hashkey2 // Initially
+j=j+i*hashkey2 // Later
+
+Rehashing
+We have to find the load factor 
+load factor=total number of records filled/total size of the hashtable
+If load factor >=75% we increase the size of the hashtable(double it) and rehash the values.
+
+
+
+

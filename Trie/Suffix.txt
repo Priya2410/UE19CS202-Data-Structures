@@ -1,0 +1,20 @@
+Suffix Tree
+* Space efficient ds
+* Compressed Trie
+* Helps in pattern searching / prefix searching
+
+How ?
+* Generate all possible prefixes
+* Write a normal trie
+* Compress it
+* to give indexes based on the actual word (s,e) s is the starting index and e is the ending index
+* In a suffix tree n(n-1) suffixes
+
+Trie : 
+* Used in dictionary
+* Autocomplete
+* Predictive text
+
+Faster than BST
+Helps in printing string alphabetically
+But needs a lot of memory

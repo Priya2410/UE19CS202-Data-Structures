@@ -5,11 +5,11 @@ struct Node
 	int data;
 	struct Node * link;
 };
-typedef struct Node* NODE;
-NODE getnode()
+
+struct Node* getnode()
 {
-	NODE x;
-	x=(NODE)malloc(sizeof(struct Node));
+	struct Node  *x;
+	x=(struct Node *)malloc(sizeof(struct Node));
 	if(x==NULL)
 	{
 		printf("insufficient memory");
@@ -17,21 +17,21 @@ NODE getnode()
 	}
 	return(x);
 }
-NODE insert_at_front(NODE head,int ele)
+struct Node* insert_at_front(struct Node* head,int ele)
 {
-	NODE temp;
+	struct Node *temp;
 	temp=getnode();
 	temp->data=ele;
 	temp->link=head;
 	return(temp);
 }
-NODE insert_at_rear(NODE head,int ele)
+struct Node* insert_at_rear(struct Node* head,int ele)
 {
-	NODE temp=NULL;
+	struct Node *temp=NULL;
 	temp=getnode();
 	temp->data=ele;
 	temp->link=NULL;
-	NODE cur=head;
+	struct Node *cur=head;
 	if(head==NULL)
 	{
 		return(temp);
@@ -45,9 +45,9 @@ NODE insert_at_rear(NODE head,int ele)
 }
 	
 	
-void display(NODE head)
+void display(struct Node *head)
 {
-	NODE cur=head;
+	struct Node *cur=head;
 	while(cur!=NULL)
 	{
 		printf("\t%d\t",cur->data);
@@ -56,19 +56,19 @@ void display(NODE head)
 }
 
 	
-NODE insert_at_position(NODE head,int ele,int pos)
+struct Node* insert_at_position(struct Node *head,int ele,int pos)
 {
-	NODE temp=getnode();
+	struct Node *temp=getnode();
 	temp->data=ele;
 	temp->link=NULL;
-	NODE first=head;
+	struct Node* first=head;
 	if(pos==1)
 	{
 		temp->link=head;
 		return(temp);
 	}
-	NODE cur=first;
-	NODE prev=NULL;
+	struct Node *cur=first;
+	struct Node *prev=NULL;
 	for(int i=1;i<=pos-1;i++)
 	{
 		prev=cur;
@@ -78,7 +78,7 @@ NODE insert_at_position(NODE head,int ele,int pos)
 	temp->link=cur;
 	return(head);
 }
-NODE delete_at_front(NODE head)
+struct Node *delete_at_front(struct Node *head)
 {
 	if(head==NULL)
 	{
@@ -87,16 +87,16 @@ NODE delete_at_front(NODE head)
 	}
 	else
 	{
-		NODE temp;
+		struct Node *temp;
 		temp=head->link;
 		printf("%d is deleted",head->data);
 		free(head);
 		return(temp);
 	}
 }
-NODE delete_rear(NODE first)
+struct Node* delete_rear(struct Node *first)
 {
-	NODE cur=NULL,prev=NULL;
+	struct Node* cur=NULL,prev=NULL;
 	if(first==NULL)
 	{
 		printf("list is empty\n");
@@ -119,9 +119,9 @@ NODE delete_rear(NODE first)
 	prev->link=NULL;
 	return(first);
 }
-NODE delete_at_position(NODE head,int pos)
+struct Node* delete_at_position(struct Node* head,int pos)
 {
-	NODE cur=head,prev=NULL;
+	struct Node *cur=head,prev=NULL;
 	if(cur==NULL)
 	{
 		printf("list is empty");
@@ -151,7 +151,7 @@ NODE delete_at_position(NODE head,int pos)
 	
 int main(void)
 {
- NODE first=NULL;
+  struct Node *first=NULL;
  int ele,posistion;
  for(;;)
  {
