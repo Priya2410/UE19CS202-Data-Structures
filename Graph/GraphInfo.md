@@ -1,4 +1,4 @@
-Graph :An ordered pair of vertices and edges.
+<h4>Graph :An ordered pair of vertices and edges.
 Directed Graph : When the pair of vertices representing an edge are ordered (u,v) not equal to (v,u)
 Undirected Graph: When the pair of vertices representing an edge are unordered (u,v) = (v,u)
 Weighted Graph : A graph in the edges have a numerical value associated with them.
@@ -38,5 +38,4 @@ Used in networks
 2) Star Topology : Number of links= Number of nodes -1,Central vertex is connected to every other node
 3) Mesh Topology : Every node is connected to every node. ( strongly connected ) Degree of every node = Number of nodes-1
 4) Bus Topology: Every node except the first and the last node have a degree=2
-
-
+</h4>
