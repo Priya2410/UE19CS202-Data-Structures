@@ -1,0 +1,52 @@
+int visited[n];
+int path[n];
+int count=0;
+
+int in_path(int *path,int value,int count)
+{
+	for(i=0;i<count;i++)
+	{
+		if(path[i]==value)
+		return 1;
+	}
+	return 0;
+}
+int dfs(int *graph,int n,int u)
+{
+	visited[u]=1;
+	path[count]=u;
+	coutn++;
+	for(v=0;v<=n;v++)
+	{
+		if(!visited[v])
+		{
+			dfs(v);
+		}
+		if(visited[v]==1 && in_path(path,v,count)==1)
+		{
+			return 1;
+		}
+	}
+	visited[u]=0;
+	count--;
+}
+
+int main()
+{
+	int graph;
+	int res;
+	for(int i=0;i<n;i++)
+	{
+		res=dfs(graph,n,i);
+		if(res==0)
+		{
+			continue;
+		}
+		if(res==1)
+		break;
+	}
+	if(res==1)
+	printf("Found cycle")
+	else
+	printf("no cycle present")
+}
