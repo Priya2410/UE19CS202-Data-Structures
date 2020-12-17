@@ -1,0 +1,43 @@
+CPU Scheduling
+CPU picks up the jobs like printing,editing,programming etc from the queue and execute them.
+Consider processes P1,P2,P3 ... are picked by the the CPU.
+To pick the job from the job pool we use CPU scheduler.
+(Process - program under execution)
+Different algorithms are present to pick the jobs from the job pool
+
+1) First come first serve
+Suppose the jobs come in the order P1,P2,P3 then P1 is executed first and so on.
+Ex.Paying fees while standing in a queue,the person coming first is given preference
+
+2)Shortest Job first:
+P1 requires 5min
+P2 requires 2min
+P3 requires 3min
+So here P2 is picked first then P3 and then P1
+
+Types
+1) Preemptive shortest job 
+Suppose P2 is executing already and then P7 comes with process time 1min P7 is given preference and executed first.P2 halts, P7 is executed
+2)Non-Preemptive 
+Suppose P2 is executing already and then P7 comes with process time 1min.P2 doesnt halt.
+
+3)Longest Job first:
+The process with the largest execution time is picked first
+Types
+1) Preemptive longest job 
+Suppose P2 is executing already and then P7 comes with process time >P2  P7 is given preference and executed first.P2 halts, P7 is executed
+2)Non-Preemptive 
+Suppose P2 is executing already and then P7 comes with process time >P2.P2 doesnt halt.
+
+Round Robin Algorithm:
+Suppose we have processes
+P1 - 10 min
+P2 - 5 min
+P3 - 8 min
+P4- 2 min
+Suppose each of the processes is given a particular CPU time like for 1 min
+Like P1 executes for 1min then CPU goes to P2 for 1 min and then P3,P4 for 1 min and so on.
+
+4)Priority
+In the Non Preemptive Priority scheduling, The Processes are scheduled according to the priority number assigned to them.
+In Preemptive Priority scheduling if another process with less priority comes that is given preference
